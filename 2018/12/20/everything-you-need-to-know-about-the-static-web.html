@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+  <title>Everything you need to know about the static web – Saptarshi's blog</title>
+
+      <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="The static web is back in business, literally - as companies keep improving app-load speeds for their ever-growing mobile user-base. In this post, learn about static and their pros and cons. And figure if it should be a part of your infrastructure roadmap.
+
+" />
+    <meta property="og:description" content="The static web is back in business, literally - as companies keep improving app-load speeds for their ever-growing mobile user-base. In this post, learn about static and their pros and cons. And figure if it should be a part of your infrastructure roadmap.
+
+" />
+    
+    
+    <meta name="author" content="" />
+
+    
+    <meta property="og:title" content="Everything you need to know about the static web" />
+    <meta property="twitter:title" content="Everything you need to know about the static web" />
+    
+
+  <link href="https://fonts.googleapis.com/css?family=Fira+Sans:600|Lora:400,400i,700|Playfair+Display:700" rel="stylesheet">
+
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link rel="shortcut icon" type="image/png" href="/favicon.png">
+
+  <link rel="stylesheet" type="text/css" href="/style.css" />
+  <link rel="alternate" type="application/rss+xml" title="Saptarshi's blog - a minimalist approach to design and code" href="/feed.xml" />
+
+  <link href="https://unpkg.com/ionicons@4.5.5/dist/css/ionicons.min.css" rel="stylesheet">
+
+</head>
+
+
+  <body>
+
+    <nav class="navbar shadow fixed-top navbar-expand-md navbar-dark bg-dark-6">
+  <div class="container">
+    <a class="navbar-brand" href="https://www.saptarshibiswas.com">Saptarshi's blog</a>
+    <button class="navbar-toggler" type="button"
+      data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+      aria-expanded="false" aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">posts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">about</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+    <div class="main container px-sm-0 px-md-3 mt-5 mb-4">
+      <div class="row">
+        <div class="col-12">
+          <article>
+
+  <div class="row">
+    <div class="col-12 col-lg-10 col-xl-9 mx-auto">
+
+      <h1 class="display-4 text-white-80 mt-0">Everything you need to know about the static web</h1>
+
+      <div class="mb-4">
+        
+          <a class="badge badge-primary badge-pill" href="https://www.saptarshibiswas.com/tags#static-website">
+            static-website
+          </a>
+        
+          <a class="badge badge-primary badge-pill" href="https://www.saptarshibiswas.com/tags#guide">
+            guide
+          </a>
+        
+      </div>
+
+      <p>The static web is back in business, literally - as companies keep improving app-load speeds for their ever-growing mobile user-base. In this post, learn about static and their pros and cons. And figure if it should be a part of your infrastructure roadmap.</p>
+
+<p><img src="/assets/img/webdesign-3411373_1920.jpg" alt="Website design on a computer browser" /></p>
+
+<h2 id="what-is-static-web">What is static web?</h2>
+
+<p><strong>Static vs dynamic websites is like reading a book vs attending a class.</strong></p>
+
+<p>The key difference being interactions. You can only read a book, but a classroom allows you to ask questions too. In much the same way, static websites move data only downstream - from your server to your users. While dynamic websites support both downstream &amp; upstream - by letting your users “talk” to your server using forms, posts, shopping cart, etc. Essentially everything that makes up modern web apps.</p>
+
+<p>Furthermore, your instructor can tailor his response based on who you are. Unlike a book, where all readers are presented with the same content. In much the same way, static websites are just collections of plain HTML files, each one representing a physical page of a website. Anyone visiting a webpage is served the corresponding HTML file irrespective of their identity.</p>
+
+<h2 id="typical-infrastructure-setup">Typical infrastructure setup</h2>
+
+<p>Static websites are stupid simple to set up.</p>
+
+<p>First you should choose a static generator. Generator is just a fancy term for a helper tool to keep your content organized. I would highly recommend <a href="https://jekyllrb.com/">Jekyll</a>. It has a wonderful community with lots of third party support and it is super easy to customize to your needs.</p>
+
+<p>Next, you need to push your content to a cloud storage such as S3. If you storage provides built-in web-server like S3 does, you can use that and call it a day. Or if you want faster page loads, which you should, then you can connect a Content Delivery Network such as CloudFront for distribution.</p>
+
+<p>Alternatively, you can also use <a href="https://www.netlify.com">Netlify</a> which automates cloud build and deployment. So you can focus on content, not infrastructure.</p>
+
+<h2 id="benefits-of-static">Benefits of static</h2>
+
+<p>Obviously static is less capable than dynamic. How could it possibly be any better?</p>
+
+<p>How could static be possibly any better despite its limited capabilities? The answer lies in simplicity.</p>
+
+<p>By doing away with the server-backend, you’re essentially getting rid off your app server cluster and database storage. Instead, your content resides in a low-cost storage (Github, S3) and distributed through a CDN, assuming a standard setup. And the benefits are obvious.</p>
+
+<p><strong>1. Speed boost: low bounce rates, high campaign ROI</strong></p>
+
+<p>First, your content resides on a CDN. It’s replicated and cached on edge servers that are geographically closer to your visitors, not within a central database behind layers of infrastructure. Results in much quicker Round Trip Time (RTT).</p>
+
+<p>Second, your pages are pre-rendered. There is no delay of server-side scripts. There is also no database connection, reducing further delays. Thus, your Time To First Byte (TTFB) will be much quicker.</p>
+
+<div class="note">
+  <p>It’s however possible to set up CDN caching, server-side rendering etc. on a dynamic website with the right 3rd-party plugins, but usually there is a time and effort associated to set it up. Not to mention whenever the underlying content undergoes changes (comment posted on a blog), you need to run costly invalidations that negates those CDN benefits.</p>
+</div>
+
+<p><strong>2. High availability: no outages, low maintenance</strong></p>
+
+<p>A typical static setup has fewer points-of-failure. You don’t have a database - so you don’t have to worry about database outages. You don’t have app servers - so no load balancers, horizontal scaling and their maintenance overheads.</p>
+
+<p>So when your blog-post is trending, rest assured your website would be able to handle the sudden spike in traffic, without the embarrassing outages.</p>
+
+<p><strong>3. Enhanced security</strong></p>
+
+<p>A non-existent database cannot be hacked. There is an entire class of threats targeting database corruption that you don’t need to worry about.</p>
+
+<p>Even if your static website gets compromised, recovery is easy. Your content is safe in a git repository and ready to be deployed in minutes. No need to set up, maintain backups and figure which backup to restore from.</p>
+
+<p><strong>4. Lower infrastructure expenses</strong></p>
+
+<p>Quite obviously, you’ll save money on compute and database instances, since you don’t need app servers and a database. You’ll also save money on backup snapshots services. Your CDN cost will reduce since you’ll run fewer invalidations.</p>
+
+<h2 id="downsides-of-static">Downsides of static</h2>
+
+<p>Static is not perfect. And it is definitely not for everybody. If you’re planning on adopting static, expect to deal with these realities.</p>
+
+<p><strong>1. Lack of themes</strong></p>
+
+<p>Static websites are yet to become mainstream. As a result, it is far difficult to find themes for Jekyll compared to Wordpress, the most popular static and dynamic frameworks respectively.</p>
+
+<p>However, static frameworks like Jekyll make it quite easy to integrate 3rd party theming libraries like Bootstrap and modify it to suit your design language.</p>
+
+<p><strong>2. Content collaboration</strong></p>
+
+<p>Static frameworks are primarily by and for developers. And an unfortunate victim of this has been the lack of focus on making them easy for content writers. The additional learning curve for your creative team might get in your way.</p>
+
+<p><strong>3. Lack of plugins</strong></p>
+
+<p>Extending functionalities using 3rd party plugins to suit your needs is what makes frameworks so awesome in the first place. And on that front, dynamic frameworks are miles ahead.</p>
+
+<p><strong>4. Uncertainties</strong></p>
+
+<p>Static websites are still new. And as with every new piece of tech, there is risk for the early adopters.</p>
+
+<h2 id="a-hybrid-approach">A hybrid approach</h2>
+
+<p>So, what does all these mean for you? How can we achieve the speed &amp; simplicity of the static web, without missing out on dynamic functionalities?</p>
+
+<p>You can combine the best of both worlds with a hybrid approach.
+Visualize the time your users spend on your web as a series of mini-interactions. Your goal would be to move as many initial interactions to static. Only those interactions, that cannot be served statically, should be handled dynamically. After which the user can be moved back to static again.</p>
+
+<p>Here is a user journey. Clicks on ad –&gt; Visits landing page (static), clicks call-to-action buy button –&gt; Visits product page on your e-commerce website (static) –&gt; Adds to cart (dynamic) –&gt; Checkout (dynamic) –&gt; Continue browsing other products (static).</p>
+
+<p>You may find these principles helpful in determining where to draw the line:</p>
+
+<ul>
+  <li>
+    <p><strong>Separation of concerns</strong> - Separate functionalities by the purpose they serve, not by their relationship. For example, the comments on a blog post are related to that post and they are both shown on the same page. But ideally, the article should be served statically, and the comments loaded dynamically.</p>
+  </li>
+  <li>
+    <p><strong>Initial interactions are better suited for static</strong> - First time visitors are less forgiving towards slow page loads, compared to returning users. To reduce bounce rate, you must ensure the first touch points - typically landing pages, blog posts etc. are served statically.</p>
+  </li>
+</ul>
+
+<h2 id="separation-of-concern---few-examples">Separation of concern - few examples</h2>
+
+<p>You got the overall idea. Here are some concrete examples.</p>
+
+<p><strong>1. Separate comments from blog posts.</strong></p>
+
+<p>Blog posts, once created, rarely change unless you edit them of course. Which is much less frequent than comments and related social plugins. Making your posts load statically will improve page-load times and search rankings. You can always load comments dynamically once the post loads or better still when users scroll down to the end of the page.</p>
+
+<p><strong>2. Move opt-in form to CRMs.</strong></p>
+
+<p>Forms are one of the biggest reasons for sticking with dynamic frameworks. However, depending on the purpose and functionality of the form, it makes sense to move them away from your static infrastructure. Contact us or opt-in forms can be moved to your CRM - which makes it easier for follow ups anyway. Webinar signups can be moved to your webinar provider. Surveys could be loaded within iframes. Other ad-hoc forms can be connected to their respective services through web-hooks.</p>
+
+<p><strong>3. Move landing pages away from CMS websites.</strong></p>
+
+<p>Quite often, landing pages are served off your Wordpress website. This is not ideal. Landing pages are where page-load speed matters the most, as your bounce rates &amp; campaign ROI depend on it. Your landing pages should not be slowed down by javascript libraries and stylesheets required by the rest of the framework.</p>
+
+<p><strong>TL;DR</strong></p>
+
+<ul>
+  <li>Static is the future of web. It’s fast, secure and it will simplify your infrastructure. Have a roadmap in place to embrace it.</li>
+  <li>Not all functionality can be or should be static. Use the principle of separation of concerns to determine what part of your web infrastructure you should switch.</li>
+</ul>
+
+    </div>
+
+  </div>
+
+  
+
+
+
+
+</article>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container px-sm-0 px-md-3 mt-3 mb-5">
+  <div class="row">
+    <div class="col-12">
+      <div class="bg-dark-1 px-3 py-2 rounded dark-emboss">
+        <div class="row no-gutters text-white-mute align-items-center">
+          <div class="col-12 col-sm-6 text-center text-sm-left small py-2">
+            &copy; 2019 Saptarshi Biswas
+          </div>
+          <div class="col-12 col-sm-6 text-center text-sm-right py-2">
+            <a class="text-white-50" href="https://www.linkedin.com/in/saptarshibiswas/">
+              <i class="icon ion-logo-linkedin"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    
+
+
+  </body>
+</html>
